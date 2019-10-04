@@ -36,7 +36,7 @@
 
                     <div class="form-group row mb-0">
                         <div class="col-md-6 offset-md-4">
-                            <a href="{!! route('kategori_galeri.index')!!}" class="btn btn-dark">
+                            <a href="{!! route('kategori_galeri.index')!!}" class="btn btn-danger">
                                 Back
                             </a>
                         </div>

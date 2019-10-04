@@ -27,7 +27,7 @@
                         <td>{!! $item->users_id !!}</td>
                         <td>{!! $item->created_at->format('d/m/Y H:i:s')!!}</td>
                         <td>
-                         <a href="{!! route('kategori_galeri.show',[$item->id]) !!}">Lihat</a>
+                         <a href="{!! route('kategori_galeri.show',[$item->id]) !!}"class="btn btn-warning">Lihat</a>
                         </td>
                         </tr>
                        @endforeach

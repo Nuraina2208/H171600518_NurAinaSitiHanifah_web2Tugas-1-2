@@ -19,25 +19,25 @@ class GaleriController extends Controller
     public function show($id) {
 
         //$Artikel=Artikel::where('id',$id)->first();
-        $Artikel=Artikel::find($id);
+        $Galeri=Galeri::find($id);
 
-        return view ('artikel.show', compact('Artikel'));
+        return view ('galeri.show', compact('Galeri'));
         
     }
 
     public function create(){
 
-        $KategoriArtikel=KategoriArtikel::pluck('nama','id');
+        $KategoriGaleri=KategoriGaleri::pluck('nama','id');
         
-        return view('artikel.create', compact('KategoriArtikel'));
+        return view('galeri.create', compact('KategoriGaleri'));
     }
 
     public function store(Request $request){
 
         $input= $request->all();
 
-        Artikel::create($input);
+        Galeri::create($input);
 
-        return redirect(route('artikel.index'));
+        return redirect(route('galeri.index'));
     }
 }
