@@ -6,9 +6,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class Galeri extends Model
 {
-     protected $table='Galeri';
+    protected $table='galeri';
 
-    	protected $fillable=['nama','user_id'];
-    	
-    	protected $casts=[];
+    	protected $fillable=[
+    		'nama','isi','users_id','kategori_galeri_id'
+    	];
+
+    	protected $casts=[ ];
 }
