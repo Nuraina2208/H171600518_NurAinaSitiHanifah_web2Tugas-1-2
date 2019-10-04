@@ -33,9 +33,13 @@ route::post('/kategori_berita','KategoriBeritaController@store')->name('kategori
 route::get('/kategori_berita/{id}','KategoriBeritaController@show')->name('kategori_berita.show');
 
 route::get('/kategori_galeri','KategoriGaleriController@index')->name('kategori_galeri.index');
+route::get('/kategori_galeri/create','KategoriGaleriController@create')->name('kategori_galeri.create');
+route::post('/kategori_galeri','KategoriGaleriController@store')->name('kategori_galeri.store');
 route::get('/kategori_galeri/{id}','KategoriGaleriController@show')->name('kategori_galeri.show');
 
 route::get('/kategori_pengumuman','KategoriPengumumanController@index')->name('kategori_pengumuman.index');
+route::get('/kategori_pengumuman/create','KategoriPengumumanController@create')->name('kategori_pengumuman.create');
+route::post('/kategori_pengumuman','KategoriPengumumanController@store')->name('kategori_pengumuman.store');
 route::get('/kategori_pengumuman/{id}','KategoriPengumumanController@show')->name('kategori_pengumuman.show');
 
 route::get('/artikel','ArtikelController@index')->name('artikel.index');

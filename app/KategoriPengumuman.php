@@ -8,7 +8,7 @@ class KategoriPengumuman extends Model
 {
     protected $table='kategori_pengumuman';
 
-    	protected $fillable=['nama','user_id'];
-    	
-    	protected $casts=[];
+    protected $fillable=[
+    'nama','users_id'
+    ];    
 }
