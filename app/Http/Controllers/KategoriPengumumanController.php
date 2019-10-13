@@ -7,32 +7,60 @@ use App\KategoriPengumuman;
 
 class KategoriPengumumanController extends Controller
 {
+
     public function index(){
-        
-        $listKategoriPengumuman=KategoriPengumuman::all(); 
+    //Eloquent => ORM (Object Relational Mapping)
+    $listKategoriPengumuman=KategoriPengumuman::all(); //select*from kategori_pengumuman
 
-        return view ('kategori_pengumuman.index',compact('listKategoriPengumuman'));
-        //return view ('kategori_artikel.index'->with('data',$listKategoriArtikel);
+    //blade
+    return view('kategori_pengumuman.index', compact('listKategoriPengumuman'));
+    //return view(view: 'kategori_pengumuman.index')->with('data',$listKategoriPengumuman);
     }
+    public function show($id){
 
-    public function show($id) {
-
-        //$KategoriArtikel=KategoriArtikel::where('id',$id)->first();
+        //$KategoriPengumuman=KategoriPengumuman::where('id',$id)->first();
         $listKategoriPengumuman=KategoriPengumuman::find($id);
 
         return view ('kategori_pengumuman.show', compact('listKategoriPengumuman'));
-        
     }
 
     public function create(){
         return view('kategori_pengumuman.create');
     }
 
-    public function store(Request $request) {
-        $input=$request->all();
-
+    public function store(Request $request){
+        $input= $request->all();
+        
         KategoriPengumuman::create($input);
 
         return redirect(route('kategori_pengumuman.index'));
     }
+
+    public function edit($id){
+        $listKategoriPengumuman=KategoriPengumuman::find($id);
+
+        if(empty($listKategoriPengumuman)){
+            return redirect(route('kategori_pengumuman.index'));
+        }
+
+        return view('kategori_pengumuman.edit',compact('listKategoriPengumuman'));
+    }
+
+    public function destroy($id){
+        $listKategoriPengumuman=KategoriPengumuman::find($id);
+
+        if (empty($listKategoriPengumuman)){
+            return redirect(route ('kategori_pengumuman.index'));
+        }
+
+        $listKategoriPengumuman->delete();
+        return redirect(route('kategori_pengumuman.index'));
+    }
+
+    public function trash(){
+
+        $listKategoriPengumuman=KategoriPengumuman::onlyTrashed();
+   
+        return view('kategori_pengumuman.index', compact('listKategoriPengumuman'));
+    }  
 }

@@ -6,7 +6,7 @@
         <div class="col-md-10">
             <input id="nama" type="text" class="form-control @error('nama') is-invalid @enderror" name="nama" value="{{ old('nama') }}" required autofocus>
 
-            @error('judul')
+            @error('nama')
             <span class="invalid-feedback" role="alert">
                 <strong>{{ $message }}</strong>
             </span>
@@ -29,12 +29,26 @@
 </div>
 
 <div class="form-group row">
-        <label form ="isi" class="col-md-2 col-form-label text-md-right">{{ __('Isi') }}</label>
+        <label form ="path" class="col-md-2 col-form-label text-md-right">{{ __('Path') }}</label>
 
         <div class="col-md-10">
-            {!! Form::textarea('isi', null,['class'=>'form-control']); !!}
+            <input id="path" type="text" class="form-control @error('path') is-invalid @enderror" name="path" value="{{ old('path') }}" required autofocus>
 
-            @error('isi')
+            @error('path')
+            <span class="invalid-feedback" role="alert">
+                <strong>{{ $message }}</strong>
+            </span>
+            @enderror
+        </div>
+</div>
+
+<div class="form-group row">
+        <label form ="keterangan" class="col-md-2 col-form-label text-md-right">{{ __('Keterangan') }}</label>
+
+        <div class="col-md-10">
+            {!! Form::textarea('keterangan', null,['class'=>'form-control']); !!}
+
+            @error('keterangan')
             <span class="invalid-feedback" role="alert">
                 <strong>{{ $message }}</strong>
             </span>

@@ -3,13 +3,12 @@
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-9">
+        <div class="col-md-8">
             <div class="card">
                 <div class="card-header">Tambah Kategori Artikel</div>
 
                 <div class="card-body">
-                    
-                    {!! Form::open(['route' => 'kategori_artikel.store', 'method' => 'post']) !!}
+                    {!! Form::model($listKategoriArtikel, ['route' => ['kategori_artikel.update', $listKategoriArtikel->id], 'method' =>'patch']) !!}
 
                         @include('kategori_artikel.form')
 

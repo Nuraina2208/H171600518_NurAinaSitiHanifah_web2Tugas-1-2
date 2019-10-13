@@ -18,7 +18,7 @@ class GaleriController extends Controller
 
     public function show($id) {
 
-        //$Artikel=Artikel::where('id',$id)->first();
+        //$Galeri=Galeri::where('id',$id)->first();
         $Galeri=Galeri::find($id);
 
         return view ('galeri.show', compact('Galeri'));
