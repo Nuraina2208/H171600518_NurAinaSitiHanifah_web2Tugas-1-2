@@ -18,7 +18,7 @@
     <label form ="kategori_galeri_id" class="col-md-2 col-form-label text-md-right">{{ __('Kategori Galeri') }}</label>
 
         <div class="col-md-10">
-            {!! Form::select('kategori_galeri_id', $KategoriGaleri,null, ["class"=>"form-control","required"] ) !!}
+            {!! Form::select('kategori_galeri_id', $listKategoriGaleri,null, ["class"=>"form-control","required"] ) !!}
 
             @error('kategori_galeri_id')
             <span class="invalid-feedback" role="alert">

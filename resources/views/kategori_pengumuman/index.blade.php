@@ -10,7 +10,10 @@
 
                     <div class="card-body">
                         <div class="row justify-content-right">
-                            <a href="{!! route('kategori_pengumuman.create') !!}" class="btn btn-secondary">Tambah Data</a>
+                            <a href="{!! route('kategori_pengumuman.create') !!}" class="btn btn-success">Tambah Data</a>
+
+
+                            <a href="{!! route('kategori_pengumuman.trash') !!}" class="btn btn-secondary">Lihat Data Hapus</a>
                         </div>
                     </div>
 

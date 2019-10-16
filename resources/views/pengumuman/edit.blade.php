@@ -7,10 +7,13 @@
             <div class="card">
                 <div class="card-header">Tambah Pengumuman</div>
 
-                <div class="card-body">
-                    <form method="post" action="{!! route('pengumuman.store') !!}">
+                <div class="card-body">                   
+                    {!! Form::model($Pengumuman, ['route' => ['pengumuman.update', $Pengumuman->id],'method'=>'patch']) !!}
+                        
                         @include('pengumuman.form')
-                    </form>
+                    
+                    {!! Form::close() !!}
+
                 </div>
             </div>
         </div>

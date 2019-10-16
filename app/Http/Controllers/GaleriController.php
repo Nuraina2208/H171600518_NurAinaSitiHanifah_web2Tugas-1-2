@@ -27,9 +27,9 @@ class GaleriController extends Controller
 
     public function create(){
 
-        $KategoriGaleri=KategoriGaleri::pluck('nama','id');
+        $listKategoriGaleri=KategoriGaleri::pluck('nama','id');
         
-        return view('galeri.create', compact('KategoriGaleri'));
+        return view('galeri.create', compact('listKategoriGaleri'));
     }
 
     public function store(Request $request){
@@ -39,5 +39,44 @@ class GaleriController extends Controller
         Galeri::create($input);
 
         return redirect(route('galeri.index'));
+    }
+
+    public function edit($id) {
+        $Galeri = Galeri::find($id);
+        $listKategoriGaleri=KategoriGaleri::pluck('nama','id');
+
+        return view('galeri.edit', compact('Galeri','listKategoriGaleri'));
+    }
+
+    public function update($id,Request $request){
+      $Galeri=Galeri::find($id);
+      $input=$request->all();
+  
+      if(empty($listGaleri)) {
+        return redirect(route('galeri.index'));
+      }
+
+      $listGaleri->update($input);
+      return redirect(route('galeri.index'));
+    }
+
+    public function destroy($id){
+        $listGaleri=Galeri::find($id);
+
+        if (empty($listGaleri)){
+            return redirect(route ('galeri.index'));
+        }
+
+        $listGaleri->delete();
+        return redirect(route('galeri.index'));
+    }
+
+   public function trash(){
+        
+        $listGaleri=Galeri::onlyTrashed()
+                    ->WhereNotNull('deleted_at')
+                    ->get(); 
+
+        return view ('galeri.index',compact('listGaleri'));
     }
 }

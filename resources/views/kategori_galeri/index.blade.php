@@ -11,6 +11,8 @@
                     <div class="card-body">
                         <div class="row justify-content-right">
                             <a href="{!! route('kategori_galeri.create') !!}" class="btn btn-secondary">Tambah Data</a>
+
+                            <a href="{!! route('kategori_galeri.trash') !!}" class="btn btn-success">Lihat Data Hapus</a>
                         </div>
                     </div>
 

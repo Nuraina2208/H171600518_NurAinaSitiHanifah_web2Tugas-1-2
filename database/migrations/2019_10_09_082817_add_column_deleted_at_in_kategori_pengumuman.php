@@ -14,10 +14,10 @@ class AddColumnDeletedAtInKategoriPengumuman extends Migration
     public function up()
     {
         Schema::table('kategori_pengumuman', function (Blueprint $table) {
-            $table->softDeletes();
+             $table->softDeletes();
         });
 
-         Schema::table('pengumuman', function (Blueprint $table) {
+        Schema::table('pengumuman', function (Blueprint $table) {
             $table->softDeletes();
         });
     }
@@ -30,11 +30,11 @@ class AddColumnDeletedAtInKategoriPengumuman extends Migration
     public function down()
     {
         Schema::table('kategori_pengumuman', function (Blueprint $table) {
-            $table->dropSoftDeletes();
+            $table->dropsoftDeletes();
         });
 
-         Schema::table('pengumuman', function (Blueprint $table) {
-            $table->dropSoftDeletes();
-         });
+        Schema::table('pengumuman', function (Blueprint $table) {
+            $table->dropsoftDeletes();
+        });
     }
 }

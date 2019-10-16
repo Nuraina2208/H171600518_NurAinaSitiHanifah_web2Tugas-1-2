@@ -3,14 +3,19 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Pengumuman extends Model
 {
-    protected $table='pengumuman';
+	use SoftDeletes;
 
-    	protected $fillable=[
-    		'judul','isi','users_id','kategori_pengumuman_id'
-    	];
+    protected $table='Pengumuman';
 
-    	protected $casts=[ ];
+    protected $fillable=[
+    	'judul','isi','users_id','kategori_pengumuman_id'
+    ];
+
+    protected $casts=[ 
+    	'deleted_at'=>'datetime'
+    ];
 }

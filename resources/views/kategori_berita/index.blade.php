@@ -11,6 +11,8 @@
                     <div class="card-body">
                         <div class="row justify-content-right">
                             <a href="{!! route('kategori_berita.create') !!}" class="btn btn-danger">Tambah Data</a>
+
+                            <a href="{!! route('kategori_berita.trash') !!}" class="btn btn-primary">Lihat Data Hapus</a>
                         </div>
                     </div>
 
@@ -35,9 +37,9 @@
                         <td><center>{!! $item->created_at->format('d/m/Y H:i:s')!!}</center></td>
                         <td><center>{!! $item->updated_at->format('d/m/Y H:i:s')!!}</center></td>
                         <td>
-                         <a href="{!! route('kategori_galeri.show',[$item->id]) !!}"class="btn btn-warning">Lihat</a>
+                         <a href="{!! route('kategori_berita.show',[$item->id]) !!}"class="btn btn-warning">Lihat</a>
 
-                         <a href="{!! route('kategori_galeri.edit',[$item->id]) !!}"class="btn btn-info">Ubah</a>
+                         <a href="{!! route('kategori_berita.edit',[$item->id]) !!}"class="btn btn-info">Ubah</a>
 
                          {!! Form::open(['route' => ['kategori_berita.destroy', $item->id],'method'=>'delete']); !!}
 
